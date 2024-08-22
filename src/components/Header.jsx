@@ -10,7 +10,7 @@ const Header = ({ themeLight, setThemeLight }) => {
 
   return (
     <header className="text-white flex justify-between items-center mb-77">
-      <h1 className="text-58 font-bold">TODO</h1>
+      <h1 className="text-58 font-bold tracking-16">TODO</h1>
       <button className="border-none bg-transparent cursor-pointer focus:outline-none" onClick={changeTheme}>
         <img src={switchThemeIcon} alt="Dark Theme" />
       </button>
