@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import Header from './components/Header.jsx';
+import BgDesktopLight from './images/bg-desktop-light.jpg'
+import BgDesktopDark from './images/bg-desktop-dark.jpg'
 
 function App() {
+  const [themeLight, setThemeLight] = useState(true)
+
+  const themeClass = themeLight? 'very-light-gray' : 'very-dark-blue'
+  const bgImage = themeLight? `url(${BgDesktopLight})` : `url(${BgDesktopDark})`
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div 
+      className={`${themeClass} bg-no-repeat bg-top bg-cover pt-80 pb-80`}
+      style={{ backgroundImage: bgImage }}
+    >
+      <div className='max-w-864 mx-auto'>
+        <Header themeLight={themeLight} setThemeLight={setThemeLight}/>
+      </div>
     </div>
   );
 }
