@@ -41,7 +41,10 @@ module.exports = {
         80: '5rem',
         102: '6.4rem',
         864: '54rem',
-      }
+      },
+      letterSpacing: {
+        16: '1rem',
+      },
     },
   },
   plugins: [],
