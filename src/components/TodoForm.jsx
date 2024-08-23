@@ -1,5 +1,4 @@
 import { useState } from "react"
-import CheckedIcon from "../images/icon-check.svg"
 
 const generateId = (array) => {
   const ids = array.map((item) => item.id)
