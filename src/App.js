@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import './App.css';
 import Header from './components/Header.jsx';
+import Footer from './components/Footer.jsx';
 import TodoForm from './components/TodoForm.jsx';
 import TodoList from './components/TodoList.jsx';
 import BgDesktopLight from './images/bg-desktop-light.jpg'
@@ -21,7 +22,7 @@ function App() {
   const [filterStatus, setFilterStatus] = useState("all")
   const [filteredTodos, setFilteredTodos] = useState(todos)
 
-  const themeClass = themeLight? 'very-light-gray' : 'very-dark-blue'
+  const themeClass = themeLight? 'bg-very-light-gray' : 'bg-very-dark-blue'
   const bgImage = themeLight? `url(${BgDesktopLight})` : `url(${BgDesktopDark})`
 
   useEffect(() => {
@@ -42,7 +43,7 @@ function App() {
 
   return (
     <div 
-      className={`wrapper ${themeClass} bg-no-repeat bg-top bg-cover pt-80 pb-80`}
+      className={`wrapper ${themeClass} bg-no-repeat bg-top bg-contain pt-80 pb-80`}
       style={{ backgroundImage: bgImage }}
     >
       <div className='max-w-864 mx-auto'>
@@ -61,6 +62,7 @@ function App() {
             setFilterStatus={setFilterStatus}
           />
         </main>
+        <Footer />
       </div>
     </div>
   );
