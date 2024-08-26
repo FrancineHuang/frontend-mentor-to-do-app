@@ -20,7 +20,7 @@ const TodoList = ({todos, setTodos, filteredTodos, filterStatus, setFilterStatus
 
 		return (
 			<>
-				<section className={`todo-list-section ${themeLight ? 'bg-white shadow-light-mode' : 'bg-very-dark-desaturated-blue shadow-dark-mode'} rounded-xl mb-77 p-38 border-b border-solid border-[0.1rem] border-[color:var(--color-very-light-grayish-blue)]`}>
+				<section className={`todo-list-section ${themeLight ? 'bg-white shadow-light-mode' : 'bg-very-dark-desaturated-blue shadow-dark-mode'} rounded-xl mb-77`}>
 					{filteredTodos.length < 1 ? (
 						<p className={`info-text p-38 border-b border-solid border-[0.1rem] ${themeLight ? 'border-[color:#e4e5f1]' : 'border-[#393a4c]'} `}>There's no {textPlacer}</p>
 					) : (
@@ -36,7 +36,7 @@ const TodoList = ({todos, setTodos, filteredTodos, filterStatus, setFilterStatus
 						</ul>
 					)}
 
-					<div className="todo-filter-control flex justify-between items-center p-24 border-t border-solid border-[0.1rem] border-[color:var(--color-very-light-grayish-blue)]">
+					<div className="todo-filter-control flex justify-between items-center p-38 text-18 border-t border-solid border-[0.1rem]">
 						<div className="todos-count">{leftTodoCount} items left</div>
 
 						<div className="control-btn group filter-control-for-desktop flex gap-4 xs:hidden sm:hidden md:hidden">

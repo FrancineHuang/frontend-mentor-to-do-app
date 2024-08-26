@@ -24,20 +24,21 @@ const TodoItem = ({ todo, todos, setTodos }) => {
 
 
   return(
-    <li className={`flex flex-row h-102 justify-start items-center px-38 gap-38 border-b border-solid border-[0.1rem] ${themeLight ? 'border-very-light-grayish-blue' : 'border-very-dark-grayish-blue-1'} ${classes}`}>
-      <label htmlFor={`todoCheckbox-${todo.id}`}>Completed Checkbox</label>
+    <li className={`flex flex-row items-center h-24 border-b border-solid border-[1.6px] ${themeLight ? 'border-very-light-grayish-blue' : 'border-very-dark-grayish-blue-1'} ${classes}`}>
+      <label className="hidden" htmlFor={`todoCheckbox-${todo.id}`}>Completed Checkbox</label>
       <input 
+        className="w-9"
         id={`todoCheckbox-${todo.id}`}
         type="text" 
         name="completed-checkbox"
         defaultChecked={mutableTodo.completed}
       />
-      <div className={`checkbox-border-wrap p-1.6 bg-gradient-to-br hover:from-check-bg-blue hover:to-check-bg-purple ${themeLight ? 'bg-very-light-grayish-blue' : 'bg-very-dark-grayish-blue-1'} rounded-full`}>
-        <span className={`checkbox flex w-38 h-38 rounded justify-center items-center cursor-pointer ${themeLight ? 'bg-white' : 'bg-very-dark-desaturated-blue'}`} onClick={toggleCompleted}>
+      <div className={`p-1.6 bg-very-light-grayish-blue dark:bg-very-dark-desaturated-blue rounded-full hover:bg-gradient-to-br from-check-bg-blue to-check-bg-purple`}>
+        <span className={`checkbox flex w-[24px] h-[24px] rounded-full justify-center items-center cursor-pointer ${themeLight ? 'bg-white' : 'bg-very-dark-desaturated-blue'}`} onClick={toggleCompleted}>
           {CheckedIcon}
         </span>
       </div>
-      <p className={`${mutableTodo.completed ? `text-light-grayish-blue-light-mode ${themeLight ? 'text-light-grayish-blue-light-mode' : 'text-very-dark-grayish-blue-1'} line-through` : ''}`}>{mutableTodo.content}</p>
+      <p className={`ml-38 text-29 ${mutableTodo.completed ? `text-light-grayish-blue-light-mode ${themeLight ? 'text-light-grayish-blue-light-mode' : 'text-very-dark-grayish-blue-1'} line-through` : ''}`}>{mutableTodo.content}</p>
     </li>
   )
 }
