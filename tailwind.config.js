@@ -45,6 +45,10 @@ module.exports = {
       letterSpacing: {
         16: '1rem',
       },
+      boxShadow: {
+        'light-mode': '-1px 5px 20px 10px rgba(157, 162, 235, 0.3)',
+        'dark-mode': '-1px 5px 20px 10px rgba(37, 39, 60, 0.2)'
+      }
     },
   },
   plugins: [],

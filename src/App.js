@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import './App.css';
 import Header from './components/Header.jsx';
 import TodoForm from './components/TodoForm.jsx';
+import TodoList from './components/TodoList.jsx';
 import BgDesktopLight from './images/bg-desktop-light.jpg'
 import BgDesktopDark from './images/bg-desktop-dark.jpg'
 
@@ -17,9 +18,27 @@ const data = [
 function App() {
   const [themeLight, setThemeLight] = useState(true)
   const [todos, setTodos] = useState(data)
+  const [filterStatus, setFilterStatus] = useState("all")
+  const [filteredTodos, setFilteredTodos] = useState(todos)
 
   const themeClass = themeLight? 'very-light-gray' : 'very-dark-blue'
   const bgImage = themeLight? `url(${BgDesktopLight})` : `url(${BgDesktopDark})`
+
+  useEffect(() => {
+    const handleFilter = () => {
+      switch(filterStatus) {
+        case "active":
+          return setFilteredTodos(todos.filter((todo) => !todo.completed))
+
+        case "completed":
+          return setFilteredTodos(todos.filter((todo) => todo.completed))
+        
+        default:
+          return setFilteredTodos(todos)
+      }
+    }
+    handleFilter()
+  }, [todos, filterStatus])
 
   return (
     <div 
@@ -33,6 +52,13 @@ function App() {
             todos={todos}
             setTodos={setTodos}
             themeLight={themeLight}
+          />
+          <TodoList
+            todos={todos}
+            setTodos={setTodos}
+            filteredTodos={filteredTodos}
+            filterStatus={filterStatus}
+            setFilterStatus={setFilterStatus}
           />
         </main>
       </div>
