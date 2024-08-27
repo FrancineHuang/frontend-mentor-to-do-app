@@ -2,9 +2,8 @@ import { useEffect, useState } from "react"
 import TodoItem from "./TodoItem"
 import TodoFilterControl from "./TodoFilterControl"
 
-const TodoList = ({todos, setTodos, filteredTodos, filterStatus, setFilterStatus}) => {
+const TodoList = ({todos, setTodos, filteredTodos, filterStatus, setFilterStatus, themeLight}) => {
 		const [leftTodoCount, setLeftTodoCount] = useState(0)
-		const [themeLight, setThemeLight] = useState(true)
 
 		useEffect(() => {
 			const uncompletedTodos = todos.filter((todo) => !todo.completed)
@@ -31,6 +30,7 @@ const TodoList = ({todos, setTodos, filteredTodos, filterStatus, setFilterStatus
 									key={todo.id}
 									setTodos={setTodos}
 									todos={todos}
+									themeLight={themeLight}
 								/>
 							))}
 						</ul>

@@ -60,6 +60,7 @@ function App() {
             filteredTodos={filteredTodos}
             filterStatus={filterStatus}
             setFilterStatus={setFilterStatus}
+            themeLight={themeLight}
           />
         </main>
         <Footer />

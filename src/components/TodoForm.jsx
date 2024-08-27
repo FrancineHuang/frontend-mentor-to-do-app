@@ -5,9 +5,8 @@ const generateId = (array) => {
   return Math.max(...ids) + 1
 }
 
-const TodoForm = ({todos, setTodos}) => {
+const TodoForm = ({todos, setTodos, themeLight}) => {
   const [todoInput, setTodoInput] = useState("")
-  const [themeLight, setThemeLight] = useState(true)
 
   const handleChange = (e) => {
     setTodoInput(e.target.value)
@@ -31,8 +30,8 @@ const TodoForm = ({todos, setTodos}) => {
 
 
   return (
-    <div className="form-control bg-white dark:very-dark-desaturated-blue w-full h-102 flex justify-stretch items-center p-38 gap-38 rounded-16 mb-38">
-      <div className="checkbox-border-wrap p-1.6 bg-very-light-grayish-blue dark:bg-very-dark-desaturated-blue rounded-full hover:bg-gradient-to-br from-check-bg-blue to-check-bg-purple">
+    <div className={`form-control ${themeLight ? "bg-white" : "bg-very-dark-desaturated-blue"} w-full h-102 flex justify-stretch items-center p-38 gap-38 rounded-16 mb-38`}>
+      <div className="checkbox-border-wrap p-1.6 bg-very-light-grayish-blue rounded-full hover:bg-gradient-to-br from-check-bg-blue to-check-bg-purple">
         <span className={`flex w-38 h-38 rounded-full justify-center items-center cursor-pointer ${themeLight ? 'bg-white' : 'bg-very-dark-desaturated-blue'}`}></span>
       </div>
 
