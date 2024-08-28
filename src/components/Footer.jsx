@@ -1,6 +1,6 @@
-const Footer = () => {
+const Footer = ({ themeLight }) => {
   return (
-    <footer className="text-center">
+    <footer className={`text-center ${themeLight ? 'text-very-dark-grayish-blue-light-mode' : 'text-light-grayish-blue-dark-mode'}`}>
       <p>
         Challenge by{" "}
         <a href="https://www.frontendmentor.io?ref=challenge">

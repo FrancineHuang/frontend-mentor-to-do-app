@@ -63,7 +63,9 @@ function App() {
             themeLight={themeLight}
           />
         </main>
-        <Footer />
+        <Footer
+          themeLight={themeLight}
+        />
       </div>
     </div>
   );
