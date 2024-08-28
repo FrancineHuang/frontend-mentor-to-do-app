@@ -36,10 +36,10 @@ const TodoList = ({todos, setTodos, filteredTodos, filterStatus, setFilterStatus
 						</ul>
 					)}
 
-					<div className="todo-filter-control flex justify-between items-center p-38 text-18 border-t border-solid border-[0.1rem]">
+					<div className={`todo-filter-control flex justify-between items-center p-38 text-[16px] border-t border-solid border-[0.1rem]  ${themeLight ? 'text-very-dark-grayish-blue-light-mode' : 'text-light-grayish-blue-dark-mode'}`}>
 						<div className="todos-count">{leftTodoCount} items left</div>
 
-						<div className="control-btn group filter-control-for-desktop flex gap-4 xs:hidden sm:hidden md:hidden">
+						<div className="control-btn group filter-control-for-desktop  flex gap-4 xs:hidden sm:hidden md:hidden">
 							<TodoFilterControl
 								filterStatus={filterStatus}
 								setFilterStatus={setFilterStatus}

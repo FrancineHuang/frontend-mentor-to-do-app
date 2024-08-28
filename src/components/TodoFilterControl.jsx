@@ -1,10 +1,10 @@
-const TodoFilterControl = ({ filterStatus, setFilterStatus, themeLight }) => {
+const TodoFilterControl = ({ filterStatus, setFilterStatus }) => {
   const handleClick = (status) => {
       setFilterStatus(status)
   }
 
   return(
-    <div className={`control-btn group ${themeLight ? '' : ''} `}>
+    <div className={`control-btn group`}>
       <button
         className={ filterStatus === "all" ? "btn active" : "btn border-none bg-transparent cursor-pointer focus:outline-none" }
         onClick={() => handleClick("all")}
